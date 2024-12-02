@@ -92,11 +92,6 @@ def rename_columns(df, rename_dict):
     """Rename columns based on a dictionary."""
     return df.rename(columns=rename_dict)
 
-def convert_column_to_datetime(df, column_name):
-    """Convert a column to datetime."""
-    df[column_name] = pd.to_datetime(df[column_name], errors='coerce')
-    return df
-
 def standardize_column_names(df):
     """Standardize column names (lowercase, replace spaces with underscores)."""
     df.columns = [col.strip().lower().replace(" ", "_") for col in df.columns]
@@ -105,3 +100,49 @@ def standardize_column_names(df):
 def get_column_summary(df, column_name):
     """Get a summary of statistics for a specific column."""
     return df[column_name].describe()
+
+
+# Data Wrangling
+
+def convert_date_column(df, column_name):
+    """
+    Convert the 'flight_date' column to datetime, handling issues like extra spaces, invalid formats, and specifying the format.
+
+    Parameters:
+        df (pd.DataFrame): The DataFrame with the column to convert.
+        column_name (str): The name of the column to convert.
+    
+    Returns:
+        pd.DataFrame: DataFrame with the column converted to datetime format.
+    """
+    # Strip leading/trailing whitespaces
+    df[column_name] = df[column_name].str.strip()
+
+    # Try to convert using a specified date format (e.g., 'dd-mm-yyyy')
+    df[column_name] = pd.to_datetime(df[column_name], format='%d-%m-%Y', errors='coerce', dayfirst=True)
+
+    return df
+
+def convert_time_column(df, column_name):
+    """
+    Convert a time column (in HH:MM format or timedelta) to a string of hours and minutes only (HH:MM format).
+    
+    Parameters:
+        df (pd.DataFrame): The DataFrame with the column to convert.
+        column_name (str): The name of the column to convert.
+    
+    Returns:
+        pd.DataFrame: DataFrame with the column converted to hours and minutes format.
+    """
+    # Check if the column is in string format like '20:00' or '0 days 20:00:00'
+    if df[column_name].dtype == 'O':
+        # Try to extract hour and minute directly from the string
+        df[column_name] = pd.to_datetime(df[column_name], errors='coerce').dt.strftime('%H:%M')
+    
+    # Handle the case where the column is already in timedelta format
+    elif pd.api.types.is_timedelta64_dtype(df[column_name]):
+        # Extract hours and minutes only from timedelta
+        df[column_name] = df[column_name].apply(lambda x: f'{x.seconds // 3600:02}:{(x.seconds % 3600) // 60:02}')
+    
+    return df
+
