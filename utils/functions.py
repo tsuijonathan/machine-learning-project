@@ -71,7 +71,7 @@ def show_null_percentage(df):
     null_percentage = df.isnull().mean() * 100
     print("\nPercentage of Missing Values in Each Column:")
     print(null_percentage)
-    
+
 
 # Basic Data Cleaning
 
@@ -82,6 +82,10 @@ def remove_duplicates(df):
 def drop_na(df, how='any', thresh=None, subset=None):
     """Drop rows with missing values (NaN) from a DataFrame."""
     return df.dropna(how=how, thresh=thresh, subset=subset)
+
+def rename_columns(df, rename_dict):
+    """Rename columns based on a dictionary."""
+    return df.rename(columns=rename_dict)
 
 def convert_column_to_datetime(df, column_name):
     """Convert a column to datetime."""
