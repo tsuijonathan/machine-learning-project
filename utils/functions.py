@@ -77,7 +77,12 @@ def show_null_percentage(df):
 
 def remove_duplicates(df):
     """Remove duplicate rows from a DataFrame."""
-    return df.drop_duplicates()
+    before_count = len(df)
+    df = df.drop_duplicates()
+    after_count = len(df)
+    removed_count = before_count - after_count
+    print(f"Removed {removed_count} duplicate rows.")
+    return df
 
 def drop_na(df, how='any', thresh=None, subset=None):
     """Drop rows with missing values (NaN) from a DataFrame."""
