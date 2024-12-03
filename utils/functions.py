@@ -133,9 +133,10 @@ def convert_time_column(df, column_name):
     Returns:
         pd.DataFrame: DataFrame with the column converted to hours and minutes format.
     """
-    # check string format
+     # check string format
     if df[column_name].dtype == 'O':
-        df[column_name] = pd.to_datetime(df[column_name], errors='coerce').dt.strftime('%H:%M')
+        # Assuming the time is in HH:MM format
+        df[column_name] = pd.to_datetime(df[column_name], format='%H:%M', errors='coerce').dt.strftime('%H:%M')
     
     # if column is already in timedelta format
     elif pd.api.types.is_timedelta64_dtype(df[column_name]):
