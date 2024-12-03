@@ -115,10 +115,9 @@ def convert_date_column(df, column_name):
     Returns:
         pd.DataFrame: DataFrame with the column converted to datetime format.
     """
-    # Strip leading/trailing whitespaces
     df[column_name] = df[column_name].str.strip()
 
-    # Try to convert using a specified date format (e.g., 'dd-mm-yyyy')
+    # convert using specific date format (e.g., 'dd-mm-yyyy')
     df[column_name] = pd.to_datetime(df[column_name], format='%d-%m-%Y', errors='coerce', dayfirst=True)
 
     return df
@@ -134,14 +133,13 @@ def convert_time_column(df, column_name):
     Returns:
         pd.DataFrame: DataFrame with the column converted to hours and minutes format.
     """
-    # Check if the column is in string format like '20:00' or '0 days 20:00:00'
+     # check string format
     if df[column_name].dtype == 'O':
-        # Try to extract hour and minute directly from the string
-        df[column_name] = pd.to_datetime(df[column_name], errors='coerce').dt.strftime('%H:%M')
+        # Assuming the time is in HH:MM format
+        df[column_name] = pd.to_datetime(df[column_name], format='%H:%M', errors='coerce').dt.strftime('%H:%M')
     
-    # Handle the case where the column is already in timedelta format
+    # if column is already in timedelta format
     elif pd.api.types.is_timedelta64_dtype(df[column_name]):
-        # Extract hours and minutes only from timedelta
         df[column_name] = df[column_name].apply(lambda x: f'{x.seconds // 3600:02}:{(x.seconds % 3600) // 60:02}')
     
     return df
