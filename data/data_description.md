@@ -26,58 +26,150 @@ The `data` folder contains the following subdirectories and files:
 
 ### `clean_dataset_df.csv` Description
 
-This dataset contains flight information related to different airlines. Each row represents a flight and includes various details about the flight and its pricing.
+This dataset contains detailed information about flights, including the airline, flight schedule, duration, price, and other relevant flight details. It has been preprocessed and cleaned to be ready for analysis.
+
+#### DataFrame Shape:
+- **Number of Rows**: 300,153
+- **Number of Columns**: 11
 
 #### Columns:
-
-1. **`airline_name`**: The name of the airline operating the flight (e.g., "SpiceJet", "Air Asia", "Vistara").
-2. **`flight_code`**: The unique code assigned to each flight (e.g., "SG-8709", "I5-764", "UK-995").
+1. **`airline_name`**: The name of the airline operating the flight (e.g., "SpiceJet").
+2. **`flight_code`**: The unique code assigned to each flight (e.g., "SG-8709").
 3. **`departure_city`**: The city from which the flight departs (e.g., "Delhi").
-4. **`arrival_city`**: The destination city where the flight lands (e.g., "Mumbai").
+4. **`arrival_city`**: The city where the flight arrives (e.g., "Mumbai").
 5. **`flight_duration`**: The duration of the flight in minutes (e.g., `130` minutes).
-6. **`stops`**: The number of stops the flight makes on its route (e.g., `0` for non-stop flights).
+6. **`stops`**: The number of stops made by the flight (e.g., `0` for non-stop flights).
 7. **`price`**: The price of the flight in Indian Rupees (INR) (e.g., `5953`).
-8. **`class`**: The class of the seat, such as "Economy".
-9. **`days_left`**: The number of days remaining until the flight departs (e.g., `1` day).
+8. **`class`**: The class of the flight (e.g., "Economy").
+9. **`days_left`**: The number of days remaining until the flight date (e.g., `1`).
 10. **`departure_time_group`**: The time group in which the flight departs, categorized into various time slots (e.g., "Evening", "Morning").
-11. **`arrival_time_group`**: The time group in which the flight arrives at its destination (e.g., "Night", "Afternoon").
+11. **`arrival_time_group`**: The time group in which the flight arrives at its destination (e.g., "Night", "Morning").
+
+#### Data Types of Columns:
+- **`airline_name`**: object
+- **`flight_code`**: object
+- **`departure_city`**: object
+- **`arrival_city`**: object
+- **`flight_duration`**: int64
+- **`stops`**: int64
+- **`price`**: int64
+- **`class`**: object
+- **`days_left`**: int64
+- **`departure_time_group`**: object
+- **`arrival_time_group`**: object
 
 
 ### `clean_business_df.csv` Description
 
-This dataset contains detailed information about business class flights, including the flight date, airline, schedule, duration, price, and other relevant details. Each row represents a business class flight.
+This dataset contains information about business class flights, including the flight details, departure and arrival times, duration, price, and more. It has been preprocessed and cleaned to be used in further analysis.
+
+#### DataFrame Shape:
+- **Number of Rows**: 93,487
+- **Number of Columns**: 12
 
 #### Columns:
-
-1. **`flight_date`**: The date of the flight (e.g., "2022-02-11").
+1. **`flight_date`**: The date on which the flight departs (e.g., "2022-02-11").
 2. **`airline_name`**: The name of the airline operating the flight (e.g., "Air India").
-3. **`flight_code`**: The unique code assigned to each flight (e.g., "AI-868", "AI-531").
-4. **`departure_time`**: The time when the flight departs (e.g., "18:00").
+3. **`flight_code`**: The unique code assigned to each flight (e.g., "AI-868").
+4. **`departure_time`**: The time of departure (e.g., "18:00").
 5. **`departure_city`**: The city from which the flight departs (e.g., "Delhi").
-6. **`arrival_time`**: The time when the flight arrives at its destination (e.g., "20:00").
+6. **`arrival_time`**: The time of arrival at the destination (e.g., "20:00").
 7. **`arrival_city`**: The city where the flight arrives (e.g., "Mumbai").
 8. **`flight_duration`**: The duration of the flight in minutes (e.g., `120` minutes).
 9. **`stops`**: The number of stops made by the flight (e.g., `0` for non-stop flights).
-10. **`price`**: The price of the flight in Indian Rupees (INR) (e.g., `25612`).
-11. **`departure_time_group`**: The time group in which the flight departs, categorized into various time slots (e.g., "Evening", "Afternoon").
-12. **`arrival_time_group`**: The time group in which the flight arrives at its destination (e.g., "Evening", "Night").
+10. **`price`**: The price of the flight (e.g., `25612`).
+11. **`departure_time_group`**: The time group for departure (e.g., "Evening").
+12. **`arrival_time_group`**: The time group for arrival (e.g., "Evening").
+
+#### Data Types of Columns:
+- `flight_date`: datetime64[ns]
+- `airline_name`: object
+- `flight_code`: object
+- `departure_time`: object
+- `departure_city`: object
+- `arrival_time`: object
+- `arrival_city`: object
+- `flight_duration`: int64
+- `stops`: int64
+- `price`: int64
+- `departure_time_group`: object
+- `arrival_time_group`: object
+
+#### Missing Values per Column:
+- No missing values in any of the columns.
 
 
-### `clean_economy_df.csv` Description
-
-This dataset contains detailed information about economy class flights, including the flight date, airline, schedule, duration, price, and other relevant details. Each row represents an economy class flight.
+#### DataFrame Shape:
+- **Number of Rows**: 206,774
+- **Number of Columns**: 12
 
 #### Columns:
-
-1. **`flight_date`**: The date of the flight (e.g., "2022-02-11").
+1. **`flight_date`**: The date on which the flight departs (e.g., "2022-02-11").
 2. **`airline_name`**: The name of the airline operating the flight (e.g., "SpiceJet").
-3. **`flight_code`**: The unique code assigned to each flight (e.g., "SG-8709", "I5-764").
-4. **`departure_time`**: The time when the flight departs (e.g., "18:55").
+3. **`flight_code`**: The unique code assigned to each flight (e.g., "SG-8709").
+4. **`departure_time`**: The time of departure (e.g., "18:55").
 5. **`departure_city`**: The city from which the flight departs (e.g., "Delhi").
-6. **`arrival_time`**: The time when the flight arrives at its destination (e.g., "21:05").
+6. **`arrival_time`**: The time of arrival at the destination (e.g., "21:05").
 7. **`arrival_city`**: The city where the flight arrives (e.g., "Mumbai").
 8. **`flight_duration`**: The duration of the flight in minutes (e.g., `130` minutes).
 9. **`stops`**: The number of stops made by the flight (e.g., `0` for non-stop flights).
-10. **`price`**: The price of the flight in Indian Rupees (INR) (e.g., `5953`).
-11. **`departure_time_group`**: The time group in which the flight departs, categorized into various time slots (e.g., "Evening", "Morning").
-12. **`arrival_time_group`**: The time group in which the flight arrives at its destination (e.g., "Night", "Morning").
+10. **`price`**: The price of the flight (e.g., `5953`).
+11. **`departure_time_group`**: The time group for departure (e.g., "Evening").
+12. **`arrival_time_group`**: The time group for arrival (e.g., "Night").
+
+#### Data Types of Columns:
+- `flight_date`: datetime64[ns]
+- `airline_name`: object
+- `flight_code`: object
+- `departure_time`: object
+- `departure_city`: object
+- `arrival_time`: object
+- `arrival_city`: object
+- `flight_duration`: int64
+- `stops`: int64
+- `price`: int64
+- `departure_time_group`: object
+- `arrival_time_group`: object
+
+#### Missing Values per Column:
+- No missing values in any of the columns.
+
+
+### `clean_combined.csv` Description
+
+This dataset combines the information from both business and economy class flights, including the flight details, departure and arrival times, duration, price, and more. It has been preprocessed and cleaned for further analysis.
+
+#### DataFrame Shape:
+- **Number of Rows**: 393,961
+- **Number of Columns**: 12
+
+#### Columns:
+1. **`flight_date`**: The date on which the flight departs (e.g., "2022-02-11").
+2. **`airline_name`**: The name of the airline operating the flight (e.g., "SpiceJet").
+3. **`flight_code`**: The unique code assigned to each flight (e.g., "SG-8709").
+4. **`departure_time`**: The time of departure (e.g., "18:55").
+5. **`departure_city`**: The city from which the flight departs (e.g., "Delhi").
+6. **`arrival_time`**: The time of arrival at the destination (e.g., "21:05").
+7. **`arrival_city`**: The city where the flight arrives (e.g., "Mumbai").
+8. **`flight_duration`**: The duration of the flight in minutes (e.g., `130` minutes).
+9. **`stops`**: The number of stops made by the flight (e.g., `0` for non-stop flights).
+10. **`price`**: The price of the flight (e.g., `5953`).
+11. **`departure_time_group`**: The time group for departure (e.g., "Evening").
+12. **`arrival_time_group`**: The time group for arrival (e.g., "Night").
+
+#### Data Types of Columns:
+- `flight_date`: datetime64[ns]
+- `airline_name`: object
+- `flight_code`: object
+- `departure_time`: object
+- `departure_city`: object
+- `arrival_time`: object
+- `arrival_city`: object
+- `flight_duration`: int64
+- `stops`: int64
+- `price`: int64
+- `departure_time_group`: object
+- `arrival_time_group`: object
+
+#### Missing Values per Column:
+- No missing values in any of the columns.
