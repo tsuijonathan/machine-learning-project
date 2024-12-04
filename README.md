@@ -1,5 +1,14 @@
 # Flight Price Prediction Project
 
-Week 7, Group 3 Project
+## Project overview and dataset
+The aim of this study is to analyze the flight booking dataset sourced from the "Ease My Trip" website and try to deploy machine learning methods to predict the price of the flights. EaseMyTrip is an online platform for booking flight tickets, commonly used by potential passengers to purchase tickets. Data was collected for 50 days, from February 11th to March 31st, 2022 and can be found here:
 
-[Dataset](https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction)
+https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction
+
+## Business case
+Our proposed business case involved launching a new airline in India in February 2025. Using machine learning techniques on this dataset, our goal was to predict the average ticket price for the first 50 days of operation and strategically set our pricing to achieve a competitive edge.
+
+## Machine learning method used
+
+
+## Findings and insights
