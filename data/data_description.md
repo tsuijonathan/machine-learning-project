@@ -3,7 +3,6 @@
 This document provides an overview of the contents of the `data` folder.
 
 ## Folder Structure
-
 The `data` folder contains the following subdirectories and files:
 
 - `raw/`: Contains the raw, unprocessed data files.
@@ -24,7 +23,7 @@ The `data` folder contains the following subdirectories and files:
 
 ## DataFrame Details
 
-### `clean_dataset_df.csv` Description
+## `clean_dataset_df.csv`
 
 This dataset contains detailed information about flights, including the airline, flight schedule, duration, price, and other relevant flight details. It has been preprocessed and cleaned to be ready for analysis.
 
@@ -59,7 +58,7 @@ This dataset contains detailed information about flights, including the airline,
 - **`arrival_time_group`**: object
 
 
-### `clean_business_df.csv` Description
+## `clean_business_df.csv`
 
 This dataset contains information about business class flights, including the flight details, departure and arrival times, duration, price, and more. It has been preprocessed and cleaned to be used in further analysis.
 
@@ -135,7 +134,47 @@ This dataset contains information about business class flights, including the fl
 - No missing values in any of the columns.
 
 
-### `clean_combined.csv` Description
+## `clean_economy_df.csv`
+
+This dataset contains information about economy class flights, including the flight details, departure and arrival times, duration, price, and more. It has been preprocessed and cleaned to be used in further analysis.
+
+#### DataFrame Shape:
+- **Number of Rows**: 206,774
+- **Number of Columns**: 12
+
+#### Columns:
+1. **`flight_date`**: The date on which the flight departs (e.g., "2022-02-11").
+2. **`airline_name`**: The name of the airline operating the flight (e.g., "SpiceJet").
+3. **`flight_code`**: The unique code assigned to each flight (e.g., "SG-8709").
+4. **`departure_time`**: The time of departure (e.g., "18:55").
+5. **`departure_city`**: The city from which the flight departs (e.g., "Delhi").
+6. **`arrival_time`**: The time of arrival at the destination (e.g., "21:05").
+7. **`arrival_city`**: The city where the flight arrives (e.g., "Mumbai").
+8. **`flight_duration`**: The duration of the flight in minutes (e.g., `130` minutes).
+9. **`stops`**: The number of stops made by the flight (e.g., `0` for non-stop flights).
+10. **`price`**: The price of the flight (e.g., `5953`).
+11. **`departure_time_group`**: The time group for departure (e.g., "Evening").
+12. **`arrival_time_group`**: The time group for arrival (e.g., "Night").
+
+#### Data Types of Columns:
+- `flight_date`: datetime64[ns]
+- `airline_name`: object
+- `flight_code`: object
+- `departure_time`: object
+- `departure_city`: object
+- `arrival_time`: object
+- `arrival_city`: object
+- `flight_duration`: int64
+- `stops`: int64
+- `price`: int64
+- `departure_time_group`: object
+- `arrival_time_group`: object
+
+#### Missing Values per Column:
+- No missing values in any of the columns.
+
+
+## `clean_combined.csv`
 
 This dataset combines the information from both business and economy class flights, including the flight details, departure and arrival times, duration, price, and more. It has been preprocessed and cleaned for further analysis.
 
