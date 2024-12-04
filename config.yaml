@@ -1,0 +1,9 @@
+input_data:
+  business_class_data:  '../../data/raw/business.csv'
+  economy_class_data: '../../data/raw/economy.csv'
+  clean_data: '../../data/raw/Clean_Dataset.csv'
+
+output_data:
+  business_class_data:  '../../data/clean/clean_business_df.csv'
+  economy_class_data: '../../data/clean/clean_economy_df.csv'
+  clean_data: '../../data/clean/clean_dataset_df.csv'
