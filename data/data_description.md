@@ -6,8 +6,8 @@ This document provides an overview of the contents of the `data` folder.
 The `data` folder contains the following subdirectories and files:
 
 - `raw/` - Contains the raw, unprocessed data files.
-  - `Clean_Dataset.csv`: A cleaned version of the dataset with missing values handled and outliers removed.
-  - `business.csv`: The original, unprocessed data.
+  - `Clean_Dataset.csv`
+  - `business.csv`
   - `economy.csv`
 
 - `clean/` - Contains the processed data files ready for use in model training or analysis.
