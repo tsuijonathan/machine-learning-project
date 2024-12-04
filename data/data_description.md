@@ -5,12 +5,12 @@ This document provides an overview of the contents of the `data` folder.
 ## Folder Structure
 The `data` folder contains the following subdirectories and files:
 
-- `raw/`: Contains the raw, unprocessed data files.
+- `raw/` - Contains the raw, unprocessed data files.
   - `Clean_Dataset.csv`: A cleaned version of the dataset with missing values handled and outliers removed.
   - `business.csv`: The original, unprocessed data.
   - `economy.csv`
 
-- `clean/`: Contains the processed data files ready for use in model training or analysis.
+- `clean/` - Contains the processed data files ready for use in model training or analysis.
   - `clean_dataset_df.csv`
   - `clean_business_df.csv`
   - `clean_economy_df.csv`
@@ -23,7 +23,7 @@ The `data` folder contains the following subdirectories and files:
 
 ## DataFrame Details
 
-## `clean_dataset_df.csv`
+### `clean_dataset_df.csv`
 
 This dataset contains detailed information about flights, including the airline, flight schedule, duration, price, and other relevant flight details. It has been preprocessed and cleaned to be ready for analysis.
 
@@ -58,7 +58,7 @@ This dataset contains detailed information about flights, including the airline,
 - **`arrival_time_group`**: object
 
 
-## `clean_business_df.csv`
+### `clean_business_df.csv`
 
 This dataset contains information about business class flights, including the flight details, departure and arrival times, duration, price, and more. It has been preprocessed and cleaned to be used in further analysis.
 
@@ -134,7 +134,7 @@ This dataset contains information about business class flights, including the fl
 - No missing values in any of the columns.
 
 
-## `clean_economy_df.csv`
+### `clean_economy_df.csv`
 
 This dataset contains information about economy class flights, including the flight details, departure and arrival times, duration, price, and more. It has been preprocessed and cleaned to be used in further analysis.
 
@@ -174,7 +174,7 @@ This dataset contains information about economy class flights, including the fli
 - No missing values in any of the columns.
 
 
-## `clean_combined.csv`
+### `clean_combined.csv`
 
 This dataset combines the information from both business and economy class flights, including the flight details, departure and arrival times, duration, price, and more. It has been preprocessed and cleaned for further analysis.
 
