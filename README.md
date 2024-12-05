@@ -17,5 +17,7 @@ Our proposed business case involved launching a new airline in India in February
 - Gradient Boosting
 - XGBoost (eXtreme Gradient Boosting) -> you have to pip install xgboost to run the notebook
 
+The XGBoost model had the best performance with R2 score of 0.97.
+
 ## Findings and insights
 By leveraging Machine Learning techniques, we could develop a price prediction model to assist the airline in setting ticket prices. Additionally, the Exploratory Data Analysis (EDA) provided valuable insights into the most significant factors influencing flight prices.
